@@ -45,6 +45,7 @@ public class QrcodePlugin implements MethodCallHandler, PluginRegistry.ActivityR
 
   @Override
   public void onMethodCall(MethodCall call, Result result) {
+    Log.e("Call", "result == null? " + (result == null));
     pendingResult = result;
     if (call.method.equals("scanQRCode")) {
       if (!(call.arguments instanceof Map)) {
@@ -103,8 +104,8 @@ public class QrcodePlugin implements MethodCallHandler, PluginRegistry.ActivityR
 
   private void setNoPermissionsError() {
     pendingResult.error("permission", "you don't have the user permission to access the cameras", null);
-    pendingResult = null;
-    arguments = null;
+    //pendingResult = null;
+    //arguments = null;
   }
 
   @Override
@@ -136,8 +137,8 @@ public class QrcodePlugin implements MethodCallHandler, PluginRegistry.ActivityR
       } else {
         pendingResult.success(null);
       }
-      pendingResult = null;
-      arguments = null;
+      //pendingResult = null;
+      //arguments = null;
       return true;
     }
     return false;

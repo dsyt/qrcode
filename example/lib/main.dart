@@ -19,7 +19,9 @@ class _MyAppState extends State<MyApp> {
   void initState() {
     super.initState();
     initPlatformState();
-    Qrcode.scanQRCode(2, "扫描二维码", "请将二维码放入框中");
+    Qrcode.scanQRCode(2, "扫描二维码", "请将二维码放入框中").then((s) {
+      print('AAAAAAAAAA    $s');
+    });
   }
 
   // Platform messages are asynchronous, so we initialize in an async method.
