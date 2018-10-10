@@ -1,4 +1,7 @@
 .DS_Store
+.atom
+.idea
+.dart_tools
 .dart_tool/
 
 .packages
@@ -6,5 +9,8 @@
 pubspec.lock
 
 build/
+ios/.generated/
+packages
+pubspec.lock
 
 .flutter_plugin/
