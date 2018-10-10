@@ -70,13 +70,13 @@ public class QRCodeActivity extends Activity implements QRCodeView.Delegate {
 
     @Override
     public void onScanQRCodeSuccess(String result) {
-        if (mScanType == SCAN_TO_SHARE) {
-            mShareView.stopSpot();
-            mShareView.startSpot();
-        } else {
-            mRequestView.stopSpot();
-            mRequestView.startSpot();
-        }
+//        if (mScanType == SCAN_TO_SHARE) {
+//            mShareView.stopSpot();
+//            mShareView.startSpot();
+//        } else {
+//            mRequestView.stopSpot();
+//            mRequestView.startSpot();
+//        }
         final Intent intent = new Intent();
         intent.putExtra(EXTRA_RESULT, result);
         setResult(Activity.RESULT_OK, intent);
