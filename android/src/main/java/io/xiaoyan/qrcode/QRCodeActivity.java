@@ -72,10 +72,10 @@ public class QRCodeActivity extends Activity implements QRCodeView.Delegate {
     public void onScanQRCodeSuccess(String result) {
         if (mScanType == SCAN_TO_SHARE) {
             mShareView.stopSpot();
-            //mShareView.startSpot();
+            mShareView.startSpot();
         } else {
             mRequestView.stopSpot();
-            //mRequestView.startSpot();
+            mRequestView.startSpot();
         }
         final Intent intent = new Intent();
         intent.putExtra(EXTRA_RESULT, result);

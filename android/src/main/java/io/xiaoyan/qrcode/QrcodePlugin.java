@@ -84,7 +84,7 @@ public class QrcodePlugin implements MethodCallHandler, PluginRegistry.ActivityR
   }
 
   private void startView() {
-    Log.e("ISNULL", "result == null ????  " + (pendingResult == null));
+    //Log.e("ISNULL", "result == null ????  " + (pendingResult == null));
     final Intent intent = new Intent(activity, QRCodeActivity.class);
     intent.putExtra(QRCodeActivity.SCAN_TYPE, (int) arguments.get("scanType"));
     activity.startActivityForResult(intent, REQUEST_CODE_SCAN_ACTIVITY);
@@ -130,12 +130,13 @@ public class QrcodePlugin implements MethodCallHandler, PluginRegistry.ActivityR
 
   @Override
   public boolean onActivityResult(int requestCode, int resultCode, Intent data) {
-    Log.e("ISNULL", "result == null ????  " + (pendingResult == null));
-    Log.e("RESULT CODE", "result code = " + requestCode);
+    //Log.e("ISNULL", "result == null ????  " + (pendingResult == null));
+    //Log.e("RESULT CODE", "result code = " + requestCode);
     if (requestCode == REQUEST_CODE_SCAN_ACTIVITY) {
       if (resultCode == Activity.RESULT_OK) {
         final String string = data.getStringExtra(QRCodeActivity.EXTRA_RESULT);
         pendingResult.success(string);
+
       } else {
         pendingResult.success(null);
       }
