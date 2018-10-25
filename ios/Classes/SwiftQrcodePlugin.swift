@@ -2,7 +2,7 @@ import Flutter
 import UIKit
 import AVFoundation
 
-@objc public class SwiftQrcodePlugin: NSObject, FlutterPlugin {
+public class SwiftQrcodePlugin: NSObject, FlutterPlugin {
   
     var viewController: UIViewController!
     var navigationController: UINavigationController?
